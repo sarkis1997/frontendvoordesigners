@@ -1,13 +1,42 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+	width: 100%;
+}
+
+h1 {
+	text-align: center;
+}
+
 ul {
 	list-style: none;
+	display: flex;
+	width: 100%;
 }
-img {
-	width: 10em;
+
+li {
+	width: 30%;
+	background: lightgrey;
+	padding: 1em;
+	margin: 0 0.4em 0 0.4em;
 }
-.listmovieblock {
-	width: 33%;
-	display: inline-flex;
+span {
+	justify-content: flex-end;
 }
-.movieblock{
-	display: block;
+i > span > button {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background-color: #599bb3;
+	border-radius: 8px;
+	cursor: pointer;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 12px 23px;
 }
+
+i > span > button:hover {
+	background-color:#408c99;
+}
+
