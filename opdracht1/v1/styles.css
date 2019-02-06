@@ -36,17 +36,12 @@ ul > li {
 	grid-template-columns: 1fr 1fr;
 }
 
-ul > li > p {
-	margin-left: 2em;
-}
-
 ul > li > div {
 	grid-column: 2;
 }
 
 ul > li > i {
 	grid-column: 2;
-	text-align: center;
 	font-size: 2em;
 }
 
