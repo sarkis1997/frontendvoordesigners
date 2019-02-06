@@ -1,0 +1,13 @@
+ul {
+	list-style: none;
+}
+img {
+	width: 10em;
+}
+.listmovieblock {
+	width: 33%;
+	display: inline-flex;
+}
+.movieblock{
+	display: block;
+}
