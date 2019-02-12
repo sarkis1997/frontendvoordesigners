@@ -2,12 +2,12 @@
 
 function functionButton() {  
 
-var lijst = document.querySelector("li.godfathermovie");
+var lijst = document.querySelector("li");
 
 var cln = lijst.cloneNode(true);
 
 var nieuwelijst = document.getElementById("savedlist").appendChild(cln);
 	}
 
-var el = document.querySelector("button");
-el.addEventListener("click", functionButton);
+var buttonclick = document.querySelector("button");
+buttonclick.addEventListener("click", functionButton);
