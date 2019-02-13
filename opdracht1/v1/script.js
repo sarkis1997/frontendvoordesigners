@@ -12,9 +12,21 @@ for (i= 0; i < buttonAdd.length; i++) {
 //Functie die een eleemnt (movie) cloned naar de nieuwe lijst
 function ButtonAddMovie() {  
 
+//selecteert de 
 var lijst = this.parentElement;
 var cln = lijst.cloneNode(true);
-var nieuwelijst = document.getElementById("savedlist").appendChild(cln);
-this.innerHTML = "Movie saved";
+
+//als de button niet gesaved is, save het dan anders console log niks doen. + nog een if function, verander button tekst.
+if (this.innerHTML !== "Movie saved") {
+	var nieuwelijst = document.getElementById("savedlist").appendChild(cln);
+
+		//veranderd de tekst van de button
+		this.innerHTML = "Movie saved";
+ 		if (this.innerHTML === "Movie saved") {
+ 		console.log("Het is gesaved")
+ 	}
+} else {
+	console.log("niks doen")
+}
 
 }
