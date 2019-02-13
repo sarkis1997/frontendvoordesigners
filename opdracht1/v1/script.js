@@ -2,13 +2,12 @@
 
 function functionButton() {  
 
-var lijst = document.querySelector("li");
-
+var lijst = buttonclick.parentElement;
 var cln = lijst.cloneNode(true);
-
 var nieuwelijst = document.getElementById("savedlist").appendChild(cln);
 
 }
 
 var buttonclick = document.querySelector("button");
+
 buttonclick.addEventListener("click", functionButton);
