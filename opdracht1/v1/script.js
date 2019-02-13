@@ -13,20 +13,32 @@ for (i= 0; i < buttonAdd.length; i++) {
 function ButtonAddMovie() {  
 
 //selecteert de 
-var lijst = this.parentElement;
+var lijst = this.parentNode;
 var cln = lijst.cloneNode(true);
 
 //als de button niet gesaved is, save het dan anders console log niks doen. + nog een if function, verander button tekst.
 if (this.innerHTML !== "Movie saved") {
 	var nieuwelijst = document.getElementById("savedlist").appendChild(cln);
+//veranderd de achtergrondkleur van de button
+	this.style.backgroundColor = 'green';
 
-		//veranderd de tekst van de button
-		this.innerHTML = "Movie saved";
- 		if (this.innerHTML === "Movie saved") {
- 		console.log("Het is gesaved")
- 	}
+//selecteer alle buttons in de savedlist
+	var savedButtonAdd = document.querySelector("#savedlist").querySelectorAll("button");
+//loop door alle buttons en voegt events toe
+	for (i= 0; i < savedButtonAdd.length; i++) {
+	savedButtonAdd[i].addEventListener("click", ButtonRemoveMovie);
+	}
+	//veranderd de tekst van de button
+	this.innerHTML = "Movie saved";
+ 	
 } else {
-	console.log("niks doen")
+	console.log("niks doen");
+	}
 }
 
+
+function ButtonRemoveMovie() {  
 }
+
+
+
