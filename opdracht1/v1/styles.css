@@ -15,6 +15,7 @@ p > span {
 
 img {
 	width: 95%;
+	min-width: 10em;
 	grid-column: 1;
 	grid-row: 1;
 	margin-right: 2em;
@@ -22,14 +23,14 @@ img {
 
 ul {
 	list-style: none;
-	width: 100%;
 	margin: 0;
 	padding: 0;
+	display: flex;
 }
 
 ul > li {
-	margin: 2em auto;
-	width: 80%;
+	margin: 1em auto;
+	width: 30%;
 	background: lightgrey;
 	padding: 1em;
 	display: grid;
@@ -42,6 +43,7 @@ ul > li > div {
 
 ul > li > i {
 	grid-column: 2;
+	grid-row: 3;
 	font-size: 2em;
 }
 
@@ -53,9 +55,11 @@ ul > li > button {
 	color: white;
 	font-size: 1em;
 	font-weight: bold;
-	padding: 12px 23px;
-	grid-column: 3;
-	grid-row: 2;
+	padding: 5px 10px;
+	width: 50%;
+	height: 4em;
+	grid-row: 3;
+	grid-column: 1;
 }
 
 ul > li > button:hover {
