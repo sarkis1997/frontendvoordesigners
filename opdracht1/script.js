@@ -9,10 +9,10 @@ for (i= 0; i < buttonAdd.length; i++) {
 	buttonAdd[i].addEventListener("click", ButtonAddMovie);
 }
 
-//Functie die een eleemnt (movie) cloned naar de nieuwe lijst
+//Functie die een element (movie) cloned naar de nieuwe lijst
 function ButtonAddMovie() {  
 
-//selecteert de 
+//selecteert de film en cloned die
 var lijst = this.parentNode;
 var cln = lijst.cloneNode(true);
 
