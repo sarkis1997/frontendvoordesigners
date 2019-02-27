@@ -28,3 +28,10 @@ Als een film werd toegevoegd aan de 'saved list', verandere ik de innerHTML en d
 Vervolgens weer met de docent besproken en medestudenten de code laten zien, kreeg ik als feedback dat een film meerdere keren kon worden toegevoegd aan de 'saved list'.
 Dit heb ik toen op een simpele manier opgelost welke mij veel frustratie heeft opgeleverd tot ik erachterkwam.
 Door de innerHTML te checken in een if/else statement, kon ik dat de clone werd uitgevoerd bij een bepaalde voorwaarde.
+
+De volgende stap is om films te verwijderen uit de 'saved list'
+
+
+
+
+Hier een demoversie om mijn code zelf uit te proberen (https://github.com/sarkis1997/frontendvoordesigners/tree/master/opdracht1)
