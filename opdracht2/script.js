@@ -2,10 +2,22 @@
 // KeyboardEvent()
 
 var sliderList = document.getElementById("image-slider");
-var allImages = document.getElementById("image-slider").querySelectorAll("img");
+var allListImages = document.getElementById("image-slider").querySelectorAll("li");
+var sliderContainer = document.getElementById("image-slider-wrapper");
 
-// //button listeners
-// nextButton.addEventListener("click", ());
+//hoe currentimage selecteren?
+var currentImage = document.getElementById("image-slider").getElementsByTagName("li");
+console.log(currentImage);
+
+
+/*onderstaande is nog in test*/
+for ( var i = 0; allListImages < allListImages.length; i++) {
+
+    allImages[i].addClass("testclass");
+      
+    };
+/*test stopt hier*/
+
 
 //voegt event keydown toe aan het hele document en maakt functie intern aan.
 document.addEventListener("keydown", function(event) {
