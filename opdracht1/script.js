@@ -34,29 +34,3 @@ if (this.innerHTML !== "Movie saved") {
 	console.log("niks doen");
 	}
 }
-
-
-//selecteert alle buttons uit de saved list
-var buttonRemove = document.getElementById("savedlist").querySelectorAll("button");
-
-//loop door alle buttons en voegt events toe
-for (i= 0; i < buttonRemove.length; i++) {
-	
-	buttonRemove[i].addEventListener("click", ButtonRemoveMovie);
-}
-
-function ButtonRemoveMovie() {  
-
-//selecteert de film en cloned die
-var lijst = this.parentNode;
-
-//als de button niet gesaved is, save het dan anders console log niks doen. + nog een if function, verander button tekst.
-if (this.innerHTML == "Save movie") {
-	document.getElementbyTagName("li").remove();
-} else {
-	console.log("niks doen");
-	}
-}
-
-
-
