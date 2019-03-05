@@ -4,20 +4,27 @@
 var sliderList = document.getElementById("image-slider");
 var allImages = document.getElementById("image-slider").querySelectorAll("img");
 
-//buttons
-var prevButton = document.getElementById("prevButton");
-var nextButton = document.getElementById("nextButton");
-
 // //button listeners
 // nextButton.addEventListener("click", ());
 
-//keyup is als de toets wordt losgeslaten, keydown, is als de toest wordt ingedrukt
-
+//voegt event keydown toe aan het hele document en maakt functie intern aan.
 document.addEventListener("keydown", function(event) {
     if(event.keyCode == 37) {
         console.log("Left was pressed");
+       	keyPressLeft();
     }
-    else if(edf.keyCode == 39) {
+    else if(event.keyCode == 39) {
        console.log("Right was pressed");
+       keyPressRight();
     }
 });
+
+//hier gebeurd iets als links wordt ingedrukt
+function keyPressLeft() {
+	console.log("leftpress function");
+}
+
+//hier gebeurd iets als rechts wordt ingedrukt
+function keyPressRight() {
+	console.log("rightpress function");
+}
