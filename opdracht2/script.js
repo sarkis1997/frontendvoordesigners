@@ -16,27 +16,37 @@ console.log(prevImage.classList);
 
 
 
-
 //voegt event keydown toe aan het hele document en maakt functie intern aan.
 document.addEventListener("keyup", function(event) {
 	var currentImage = document.querySelector(".active");
-
-
-var prevImage = currentImage.previousElementSibling;
-var nextImage = currentImage.nextElementSibling;
+	var prevImage = currentImage.previousElementSibling;
+	var nextImage = currentImage.nextElementSibling;
 
     if(event.keyCode == 37) {
         console.log("Left was pressed");
        	keyPressLeft();
-
-       	document.querySelector('.active').classList.remove('active');
-       	prevImage.classList.add('active');
-    }
-    else if(event.keyCode == 39) {
+		document.querySelector('.active').classList.remove('active');
+		 	
+		if (prevImage.tagName === "LI"){
+       		console.log('jaaaa li!!!');
+       		prevImage.classList.add('active');
+       	} 
+       	else {
+       		document.querySelector("li:nth-of-type(3)").classList.add('active');
+       	}
+       } 
+       else if(event.keyCode == 39) {
        console.log("Right was pressed");
        keyPressRight();
        document.querySelector('.active').classList.remove('active');
-       nextImage.classList.add('active');
+
+		if (nextImage.tagName === "LI"){
+       		console.log('jaaaa li!!!');
+       		nextImage.classList.add('active');
+       	} 
+       	else {
+       		document.querySelector("li:nth-of-type(3)").classList.add('active');
+       	}
     }
 });
 
