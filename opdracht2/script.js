@@ -1,12 +1,13 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 // KeyboardEvent()
 
-var sliderList = document.getElementById("image-slider");
-var currentImage = document.getElementById("image-slider").querySelector("li:nth-of-type(4)");
-var sliderContainer = document.getElementById("image-slider-wrapper");
+var addClassImage = document.querySelector("li:nth-of-type(3)").classList.add('active');
+
+var currentImage = document.querySelector(".active");
+
+
 var prevImage = currentImage.previousElementSibling;
 var nextImage = currentImage.nextElementSibling;
-currentImage.classList.add('active');
 
 console.log(prevImage.classList);
 
@@ -18,9 +19,16 @@ console.log(prevImage.classList);
 
 //voegt event keydown toe aan het hele document en maakt functie intern aan.
 document.addEventListener("keyup", function(event) {
+	var currentImage = document.querySelector(".active");
+
+
+var prevImage = currentImage.previousElementSibling;
+var nextImage = currentImage.nextElementSibling;
+
     if(event.keyCode == 37) {
         console.log("Left was pressed");
        	keyPressLeft();
+
        	document.querySelector('.active').classList.remove('active');
        	prevImage.classList.add('active');
     }
