@@ -22,6 +22,12 @@
     list-style: none;
 }
 
-.testclass {
-    margin: 100em;
+
+#image-slider li img {
+    display: none;
+    list-style: none;
+}
+
+.active img {
+    display: block !important;
 }

@@ -2,32 +2,33 @@
 // KeyboardEvent()
 
 var sliderList = document.getElementById("image-slider");
-var allListImages = document.getElementById("image-slider").querySelectorAll("li");
+var currentImage = document.getElementById("image-slider").querySelector("li:nth-of-type(4)");
 var sliderContainer = document.getElementById("image-slider-wrapper");
+var prevImage = currentImage.previousElementSibling;
+var nextImage = currentImage.nextElementSibling;
+currentImage.classList.add('active');
 
-//hoe currentimage selecteren?
-var currentImage = document.getElementById("image-slider").getElementsByTagName("li");
-console.log(currentImage);
+console.log(prevImage.classList);
+
+// currentImage.classList.remove('active');
+// console.log(currentImage.classList);
 
 
-/*onderstaande is nog in test*/
-for ( var i = 0; allListImages < allListImages.length; i++) {
-
-    allImages[i].addClass("testclass");
-      
-    };
-/*test stopt hier*/
 
 
 //voegt event keydown toe aan het hele document en maakt functie intern aan.
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keyup", function(event) {
     if(event.keyCode == 37) {
         console.log("Left was pressed");
        	keyPressLeft();
+       	document.querySelector('.active').classList.remove('active');
+       	prevImage.classList.add('active');
     }
     else if(event.keyCode == 39) {
        console.log("Right was pressed");
        keyPressRight();
+       document.querySelector('.active').classList.remove('active');
+       nextImage.classList.add('active');
     }
 });
 
