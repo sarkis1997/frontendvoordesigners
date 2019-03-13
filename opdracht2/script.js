@@ -22,40 +22,34 @@ document.addEventListener("keyup", function(event) {
 	var prevImage = currentImage.previousElementSibling;
 	var nextImage = currentImage.nextElementSibling;
 
-    if(event.keyCode == 37) {
-        console.log("Left was pressed");
-       	keyPressLeft();
-		document.querySelector('.active').classList.remove('active');
-		 	
-		if (prevImage.tagName === "LI"){
-       		console.log('jaaaa li!!!');
-       		prevImage.classList.add('active');
-       	} 
-       	else {
-       		document.querySelector("li:nth-of-type(3)").classList.add('active');
-       	}
-       } 
-       else if(event.keyCode == 39) {
-       console.log("Right was pressed");
-       keyPressRight();
-       document.querySelector('.active').classList.remove('active');
+    if (event.keyCode == 37) {
+	        console.log("Left was pressed");
+			document.querySelector('.active').classList.remove('active');
+			 	
+			 	// checkt eerst of of de vorige sibbling geen "anything" (kan van alles zijn) is, dan ...
+		if (prevImage !== document.querySelector("anything")) {
+			if (prevImage.tagName === "LI"){
+	       		console.log('LI gevonden');
+	       		prevImage.classList.add('active');
 
+	     	} 
+	     	 	// anders krijgt de laatste li active
+	    } else {
+				document.querySelector("li:last-of-type").classList.add('active');	  
+	      	}
+	   }
+
+   else if (event.keyCode == 39) {
+   console.log("Right was pressed");
+   document.querySelector('.active').classList.remove('active');
+	
+	if (nextImage !== document.querySelector("anything")) {
 		if (nextImage.tagName === "LI"){
-       		console.log('jaaaa li!!!');
+       		console.log('LI gevonden');
        		nextImage.classList.add('active');
-       	} 
-       	else {
+       		} 
+		} else {
        		document.querySelector("li:nth-of-type(3)").classList.add('active');
-       	}
-    }
+       		}
+	}
 });
-
-//hier gebeurd iets als links wordt ingedrukt
-function keyPressLeft() {
-	console.log("leftpress function");
-}
-
-//hier gebeurd iets als rechts wordt ingedrukt
-function keyPressRight() {
-	console.log("rightpress function");
-}
