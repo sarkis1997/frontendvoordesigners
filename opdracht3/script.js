@@ -1,55 +1,31 @@
-/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
-// KeyboardEvent()
-
-var addClassImage = document.querySelector("li:nth-of-type(3)").classList.add('active');
-
-var currentImage = document.querySelector(".active");
-
-
-var prevImage = currentImage.previousElementSibling;
-var nextImage = currentImage.nextElementSibling;
-
-console.log(prevImage.classList);
-
-// currentImage.classList.remove('active');
-// console.log(currentImage.classList);
+var header = document.querySelector('header');
+var movies = document.querySelector('div');
 
 
 
-//voegt event keydown toe aan het hele document en maakt functie intern aan.
-document.addEventListener("keyup", function(event) {
-	var currentImage = document.querySelector(".active");
-	var prevImage = currentImage.previousElementSibling;
-	var nextImage = currentImage.nextElementSibling;
+var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
 
-    if (event.keyCode == 37) {
-	        console.log("Left was pressed");
-			document.querySelector('.active').classList.remove('active');
-			 	
-			 	// checkt eerst of of de vorige sibbling geen "anything" (kan van alles zijn) is, dan ...
-		if (prevImage) {
-			if (prevImage.tagName === "LI"){
-	       		console.log('LI gevonden');
-	       		prevImage.classList.add('active');
+request.onload = function() {
+  var movies = request.response;
+  populateHeader(movies);
+  showMovies(movies);
+}
 
-	     	} 
-	     	 	// anders krijgt de laatste li active
-	    } else {
-				document.querySelector("li:last-of-type").classList.add('active');	  
-	      	}
-	   }
+// algemene header aangemaakt met h1
+function populateHeader(jsonObj) {
+  var myH1 = document.createElement('h1');
+  // hier kan ik de h1 aanpassen in de header
+  myH1.textContent = "Movies";
+  header.appendChild(myH1);
+}
 
-   else if (event.keyCode == 39) {
-   console.log("Right was pressed");
-   document.querySelector('.active').classList.remove('active');
-	
-	if (nextImage !== document.querySelector("anything")) {
-		if (nextImage.tagName === "LI"){
-       		console.log('LI gevonden');
-       		nextImage.classList.add('active');
-       		} 
-		} else {
-       		document.querySelector("li:nth-of-type(3)").classList.add('active');
-       		}
-	}
-});
+// hier maak ik een paragraph, waarin ik content ga plaatsen
+  function showMovies(jsonObj) {
+  var myP = document.createElement('p');
+  myP.textContent = "het werkt";
+  movies.appendChild(myP);
+  }
