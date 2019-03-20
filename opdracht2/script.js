@@ -27,7 +27,7 @@ document.addEventListener("keyup", function(event) {
 			document.querySelector('.active').classList.remove('active');
 			 	
 			 	// checkt eerst of of de vorige sibbling geen "anything" (kan van alles zijn) is, dan ...
-		if (prevImage !== document.querySelector("anything")) {
+		if (prevImage) {
 			if (prevImage.tagName === "LI"){
 	       		console.log('LI gevonden');
 	       		prevImage.classList.add('active');
