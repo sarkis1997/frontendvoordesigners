@@ -1,0 +1,37 @@
+.container {
+    width:800px;
+    height: 100%;
+    padding:20px;
+    background: black; 
+    margin: 0 auto;
+}
+
+h2  {
+    text-align: center;
+}
+
+/*verbergt alles buiten de container*/
+.image-slider-wrapper {
+}
+
+#image-slider {
+    padding:0;
+}
+
+#image-slider li {
+    list-style: none;
+
+}
+
+
+#image-slider li img {
+    display: none;
+    list-style: none;
+    margin: 0 auto;
+    max-width:100%;
+}
+
+.active img {
+    display: block !important;
+   max-width:100%;
+}
