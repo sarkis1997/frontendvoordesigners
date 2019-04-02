@@ -9,6 +9,33 @@ request.send();
 request.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var response = JSON.parse(request.responseText);
-    console.log(response);
+
+    //krijgt de reviews van iedere film terug
+    for (var i = 0; i < response.length; i++) {
+      var allMovies = response[i];
+    //Haalt ul op
+      var ul = document.getElementById("ulMovies");
+    // Maakt li item
+      var li = document.createElement('li');
+    // Voegt li item toe door een text NODE met (movieTitle) inhoud aan te maken
+      li.appendChild(document.createTextNode(allMovies.title));
+    //Plaatst de li in ul
+      ul.appendChild(li);
+
+      
+
+
+
+
+    }
+
+
   }
 };
+
+//
+// Your function is returning a string rather than the div node. appendChild can only append a node
+//
+// var d= document.createElement("div");
+// d.classList.add("help-block");
+// document.getElementById("firstName-    group").appendChild(d);
