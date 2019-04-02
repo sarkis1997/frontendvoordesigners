@@ -49,7 +49,7 @@ document.addEventListener("keyup", function(event) {
        		nextImage.classList.add('active');
        		} 
 		} else {
-       		document.querySelector("li:nth-of-type(3)").classList.add('active');
+       		document.querySelector("li:last-of-type").classList.add('active');
        		}
 	}
 });
