@@ -12,17 +12,21 @@ request.onreadystatechange = function() {
 
     //krijgt de reviews van iedere film terug
     for (var i = 0; i < response.length; i++) {
-      var allMovies = response[i];
-    //Haalt ul op
-      var ul = document.getElementById("ulMovies");
-    // Maakt li item
-      var li = document.createElement('li');
-    // Voegt li item toe door een text NODE met (movieTitle) inhoud aan te maken
-      li.appendChild(document.createTextNode(allMovies.title));
-    //Plaatst de li in ul
-      ul.appendChild(li);
 
-      
+          var currentMovie = response[i];
+        //Haalt ul op
+          var ul = document.getElementById("ulMovies");
+        // Maakt li item
+          var li = document.createElement('li');
+        // Voegt li item toe door een text NODE met (movieTitle) inhoud aan te maken
+          li.appendChild(document.createTextNode(currentMovie.title));
+        // Maakt img element aan
+          var img = document.createElement('img');
+          img.src = currentMovie.cover;
+        //Voegt img toe aan li
+          li.appendChild(img);
+        //Plaatst de li in ul
+          ul.appendChild(li);
 
 
 
