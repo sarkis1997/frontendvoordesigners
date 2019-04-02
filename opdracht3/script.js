@@ -1,31 +1,14 @@
-var header = document.querySelector('header');
-var movies = document.querySelector('div');
-
-
-
 var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json';
 var request = new XMLHttpRequest();
+
+// Request open haalt de json op van Koop's github en send verstuurt de request naar de server.
 request.open('GET', requestURL);
-request.responseType = 'json';
 request.send();
 
-request.onload = function() {
-  var movies = request.response;
-  populateHeader(movies);
-  showMovies(movies);
-}
-
-// algemene header aangemaakt met h1
-function populateHeader(jsonObj) {
-  var myH1 = document.createElement('h1');
-  // hier kan ik de h1 aanpassen in de header
-  myH1.textContent = "Movies";
-  header.appendChild(myH1);
-}
-
-// hier maak ik een paragraph, waarin ik content ga plaatsen
-  function showMovies(jsonObj) {
-  var myP = document.createElement('p');
-  myP.textContent = "het werkt";
-  movies.appendChild(myP);
+//Als de XMLHttpRequest de state 'done' (4) heeft EN status 200 (alles is OK) dan wordt het JSON bestand geparsed.
+request.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var response = JSON.parse(request.responseText);
+    console.log(response);
   }
+};
