@@ -1,0 +1,7 @@
+#ulMovies{
+  list-style: none;
+}
+
+#ulMovies img {
+  width: 10em;
+}
