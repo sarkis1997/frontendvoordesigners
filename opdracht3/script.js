@@ -26,6 +26,7 @@ request.onreadystatechange = function() {
         // img is de cover van currentMovie
           img.src = currentMovie.cover;
 
+//-------- HIER WORDEN DE REVIEWS INGELANDEN --------//
           var reviewsOl = document.createElement('ol');
             for (var j = 0; j < currentMovie.reviews.length; j++) {
               var currentScore = currentMovie.reviews[j].score;
@@ -35,15 +36,30 @@ request.onreadystatechange = function() {
 
               reviewsOl.appendChild(reviewsLi);
             }
+//-------- HIER WORDT DE GEMIDDELDE RATING BEPAALD VAN DE FILM --------//
+            var averageScore = 0;
+            for (var k = 0; k < currentMovie.reviews.length; k++) {
+                averageScore += currentMovie.reviews[k].score;
+            }
+            var avg = averageScore / currentMovie.reviews.length;
+            var avgLi = document.createElement('li');
+            avgLi.appendChild(document.createTextNode(avg));
+
+            //Checkt of er al een review is geplaatst door de innerHTML te checken op een getal.
+            if (isNaN(avgLi.innerHTML)) {
+              avgLi.innerHTML = "Wees de eerste en plaats een review!"
+            }
 
 
         //Voegt de h2 toe aan li
           li.appendChild(title);
+          //voegt de Average van reviews to aan li
+          li.appendChild(avgLi)
         //Voegt img toe aan li
           li.appendChild(img);
         //Voegt de OL van reviews aan de li
           li.appendChild(reviewsOl);
-        //Plaatst de li in ul
+        //Plaatst de algemene li in ul
           ul.appendChild(li);
     }
   } else if (this.readyState == 4 && this.status == 200) {
