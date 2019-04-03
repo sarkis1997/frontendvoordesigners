@@ -132,3 +132,14 @@ document.addEventListener("keyup", function(event) {
           }
   }
 });
+
+//-----------------BUTTON TO SHOW THE REVIEWS----------------//
+    var btnClickPrev = document.createElement('button');
+    btnClickPrev.innerHTML = "Show the reviews";
+
+    var addBtnClickPrevLocation = document.querySelector('.prevbutton');
+    addBtnClickPrevLocation.appendChild(btnClickPrev);
+
+    addBtnClickPrevLocation.addEventListener ("click", function() {
+    document.querySelector('.active span').style.display = 'block';
+    });
