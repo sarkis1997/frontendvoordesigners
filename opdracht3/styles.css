@@ -80,7 +80,7 @@ body {
 }
 .active span {
   margin-left: 2em;
-  display: none
+  display: flex;
 }
 
 footer {

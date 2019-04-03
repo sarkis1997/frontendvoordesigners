@@ -33,7 +33,6 @@ request.onreadystatechange = function() {
           reviewsOl.appendChild(document.createTextNode("Laatste beoordelingen:"));
           var addTextScore = document.querySelector('span');
 
-          console.log(addTextScore);
             for (var j = 0; j < currentMovie.reviews.length; j++) {
               var currentScore = currentMovie.reviews[j].score;
 
@@ -132,14 +131,3 @@ document.addEventListener("keyup", function(event) {
           }
   }
 });
-
-//-----------------BUTTON TO SHOW THE REVIEWS----------------//
-    var btnClickPrev = document.createElement('button');
-    btnClickPrev.innerHTML = "Show the reviews";
-
-    var addBtnClickPrevLocation = document.querySelector('.prevbutton');
-    addBtnClickPrevLocation.appendChild(btnClickPrev);
-
-    addBtnClickPrevLocation.addEventListener ("click", function() {
-    document.querySelector('.active span').style.display = 'block';
-    });
