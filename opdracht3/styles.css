@@ -1,21 +1,50 @@
-
-h2 {
-  color: white;
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url(images/movie.jpg);
+  background-size: cover;
+  font-family: monaco, sans-serif;
 }
 
 .container {
     width:100%;
-    min-height: 100%;
     padding:0px;
-    background: yellow;
     margin: 0 auto;
+}
+
+.container h1 {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 1em 0 1em 0;
+}
+
+.container h2 {
+  margin: 0;
+  border-bottom: 2px solid black;
+  padding-bottom: 1em;
+  font-size: 2em;
+}
+
+.container > ul > li > ol {
+  list-style: none;
+  text-align: left;
+  display: flex;
+}
+.active  li {
+  margin-right: 1em;
 }
 
 
 #ulMovies{
   list-style: none;
-  padding:0;
   text-align: center;
+  width: 50%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-left: 0;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 #ulMovies > li {
@@ -26,10 +55,45 @@ h2 {
 }
 
 .active {
-    display: block !important;
+   display: block !important;
    max-width:100%;
 }
 
+/*container waar de imgcovers in gaan*/
+.active > div {
+  width: auto;
+  height: 30em;
+  margin: auto;
+}
+
 .active img {
-  max-width: 20em;
+  max-width:100%;
+  max-height:100%;
+}
+
+.active > li:first-of-type {
+  font-size: 2em;
+  padding-bottom: 1em;
+}
+
+footer {
+  width: 100%;
+  background: black;
+
+}
+footer div{
+  display: flex;
+  justify-content: space-around;
+}
+footer ul {
+  background: black;
+  color: white;
+  list-style: none;
+  margin: 0;
+  height: 10em;
+  padding-top: 2em;
+}
+
+footer ul li {
+
 }
