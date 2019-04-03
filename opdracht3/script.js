@@ -29,7 +29,11 @@ request.onreadystatechange = function() {
           img.src = currentMovie.cover;
 
 //-------- HIER WORDEN DE REVIEWS INGELANDEN --------//
-          var reviewsOl = document.createElement('ol');
+          var reviewsOl = document.createElement('span');
+          reviewsOl.appendChild(document.createTextNode("Laatste beoordelingen:"));
+          var addTextScore = document.querySelector('span');
+
+          console.log(addTextScore);
             for (var j = 0; j < currentMovie.reviews.length; j++) {
               var currentScore = currentMovie.reviews[j].score;
 
@@ -49,6 +53,7 @@ request.onreadystatechange = function() {
             //Checkt of er al een review is geplaatst door de innerHTML te checken op een getal.
             if (isNaN(avgLi.innerHTML)) {
               avgLi.innerHTML = "Er zijn nog geen beoordelingen voor deze film!";
+              reviewsOl.innerHTML = "";
             }
 
 

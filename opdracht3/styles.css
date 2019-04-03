@@ -26,7 +26,7 @@ body {
   font-size: 2em;
 }
 
-.container > ul > li > ol {
+.container > ul > li > span {
   list-style: none;
   text-align: left;
   display: flex;
@@ -74,6 +74,10 @@ body {
 .active > li:first-of-type {
   font-size: 2em;
   padding-bottom: 1em;
+}
+
+.active ol > li:first-of-type{
+    margin-left: 1em;
 }
 
 footer {
