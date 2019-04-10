@@ -85,21 +85,61 @@ request.onreadystatechange = function() {
     //hier komt code voor als readystate of status andere code heeft (bijv 404)
     }
 
-//Vanaf hier komt code voor keyevent
+//------- BUTTON ONCLICK EVENT RECHTS------- //
   var selectLi = document.querySelector("ul > li:first-of-type");
   var addClass = selectLi.classList.add('active');
 
   var currentImage = document.querySelector(".active");
 
 
+  //voegt event keydown toe aan het hele document en maakt functie intern aan.
+};
+
+//------- BUTTON ONCLICK EVENT LINKS ------- //
+var prevBtnclick = document.getElementById("prevbuttonClass");
+prevBtnclick.onclick = function() {
+
+  var currentImage = document.querySelector('.active');
   var prevImage = currentImage.previousElementSibling;
   var nextImage = currentImage.nextElementSibling;
 
-  // currentImage.classList.remove('active');
-  // console.log(currentImage.classList);
+    if (prevBtnclick) {
+      document.querySelector('.active').classList.remove('active');
 
-  //voegt event keydown toe aan het hele document en maakt functie intern aan.
-};
+          // checkt eerst of of de vorige sibbling geen "anything" (kan van alles zijn) is, dan ...
+      if (prevImage) {
+        if (prevImage.tagName === "LI"){
+              prevImage.classList.add('active');
+          }
+            // anders krijgt de laatste li active
+        } else {
+          document.querySelector("ul > li:last-of-type").classList.add('active');
+            }
+     }
+}
+
+//------- BUTTON ONCLICK EVENT RECHTS------- //
+var nextBtnclick = document.getElementById("nextbuttonClass");
+nextBtnclick.onclick = function() {
+
+  var currentImage = document.querySelector('.active');
+  var prevImage = currentImage.previousElementSibling;
+  var nextImage = currentImage.nextElementSibling;
+
+    if (nextBtnclick) {
+      document.querySelector('.active').classList.remove('active');
+
+     if (nextImage) {
+       if (nextImage.tagName === "LI"){
+             nextImage.classList.add('active');
+             }
+       } else {
+             document.querySelector("ul > li:first-of-type").classList.add('active');
+             }
+     }
+}
+
+//------- KEY EVENTS ------- //
 document.addEventListener("keyup", function(event) {
   var currentImage = document.querySelector('.active');
   var prevImage = currentImage.previousElementSibling;

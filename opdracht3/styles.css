@@ -101,6 +101,19 @@ footer ul {
   padding-top: 2em;
 }
 
-footer ul li {
+.movielistcontainer {
+  display: flex;
+justify-content: center;
+}
 
+#prevbuttonClass{
+margin: auto;
+background-color: rgba(0,0,0,0);
+border: none;
+}
+
+#nextbuttonClass{
+margin: auto;
+background-color: rgba(0,0,0,0);
+border: none;
 }
